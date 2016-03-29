@@ -1,0 +1,6 @@
+ h1= @word.title
+ p= @word.translation
+
+ = link_to "Back", root_path
+ = link_to "Edit", edit_word_path(@word)
+ = link_to "Delete", word_path(@word), method: :delete, data: { confirm: "Are you sure?" }
