@@ -1,0 +1,7 @@
+log/*
+test/*
+tmp/*
+spec/*
+config/database.yml
+db/*.sqlite3
+.idea/
