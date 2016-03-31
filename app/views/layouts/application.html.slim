@@ -1,0 +1,17 @@
+doctype html
+html
+head
+	title Dictionary
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= csrf_meta_tags
+body
+  	nav.navbar.navbar-default
+    	.container
+    		.navbar-header
+      			== link_to "Word", root_path, class: "navbar-brand"
+      		.nav.navbar-nav.navbar-right
+        		== link_to "New Word", new_word_path, class: "navbar-brand"
+
+	.container
+	    == yield
