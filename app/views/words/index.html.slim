@@ -1,2 +1,3 @@
 - @words.each do |word|
-	h2= link_to word.title, word
+	h2= link_to truncate(word.title.titlecase), word
+	P= truncate(word.translation.titlecase, length: 20)
