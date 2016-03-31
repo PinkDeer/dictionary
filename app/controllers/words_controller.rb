@@ -1,8 +1,7 @@
 class WordsController < ApplicationController
 
-
 	def index
-    	@words = Word.all.order("created_at DESC")
+    	@words = Word.where(user_id: current_user)
   	end
 
 	def show
@@ -10,11 +9,11 @@ class WordsController < ApplicationController
 	end
 
 	def new
-		@word = Word.new
+		@word = current_user.words.build
  	end
 
 	def create
-		@word = Word.new(word_params)
+		@word = current_user.words.build(word_params)
 		if @word.save
 			redirect_to @word
 		else
