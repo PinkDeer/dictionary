@@ -14,4 +14,7 @@ body
         		== link_to "New Word", new_word_path, class: "navbar-brand"
 
 	.container
+		p.notice= notice
+		p.alert= alert
+
 	    == yield
