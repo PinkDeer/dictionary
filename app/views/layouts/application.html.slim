@@ -9,9 +9,17 @@ body
   	nav.navbar.navbar-default
     	.container
     		.navbar-header
-      			== link_to "Word", root_path, class: "navbar-brand"
-      		.nav.navbar-nav.navbar-right
-        		== link_to "New Word", new_word_path, class: "navbar-brand"
+      			== link_to "All words", root_path, class: "navbar-brand"
+
+      		- if user_signed_in?
+      			ul.nav.navbar-nav.navbar-right
+      				== link_to "New Word", new_word_path, class: "navbar-brand"
+      				== link_to "Account", edit_user_registration_path, class: "navbar-brand"
+      				== link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-brand"
+      		- else
+      			ul.nav.navbar-nav.navbar-right
+      				== link_to "Sign Up", new_user_registration_path, class: "navbar-brand"
+					== link_to "Sign In", new_user_session_path, class: "navbar-brand"
 
 	.container
 		p.notice= notice
