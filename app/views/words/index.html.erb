@@ -1,0 +1,27 @@
+<div class="tabs">
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="tab-a" data-toggle="tab">A</a></li>
+    <li><a href="tab-b" data-toggle="tab">B</a></li>
+    <li><a href="tab-c" data-toggle="tab">C</a></li>
+  </ul>
+
+  <div class="tab-content">
+
+    <div class="tab-pane fade in active" id="tab-a">
+      <p><% word = Word.find(1) %></p>
+      <p><%= word.title %></p>
+    </div>
+
+    <div class="tab-pane fade" id="tab-b">
+      <p><% word = Word.find(1) %></p>
+      <p><%= word.title %></p>
+    </div>
+
+    <div class="tab-pane fade" id="tab-c">
+      <p><% word = Word.find(1) %></p>
+      <p><%= word.title %></p>
+    </div>
+
+  </div>
+</div>
