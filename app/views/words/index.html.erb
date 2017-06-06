@@ -9,11 +9,12 @@
   <div class="tab-content">
 
     <div class="tab-pane fade in active" id="tab-a">
-      <p><% word = Word.find(1) %></p>
-      <p><%= word.title %></p>
+      <% q =  "%#{"A%"}%" %>
+      <% @word = Word.where(":title LIKE ?", q) %>
+      <p><%= @word %></p>
     </div>
 
-    <div class="tab-pane fade" id="tab-b">
+    <!-- <div class="tab-pane fade" id="tab-b">
       <p><% word = Word.find(1) %></p>
       <p><%= word.title %></p>
     </div>
@@ -21,7 +22,7 @@
     <div class="tab-pane fade" id="tab-c">
       <p><% word = Word.find(1) %></p>
       <p><%= word.title %></p>
-    </div>
+    </div> -->
 
   </div>
 </div>
